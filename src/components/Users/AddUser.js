@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
+import Wrapper from "../Helper/Wrapper";
 import styles from "./AddUser.module.css";
 
 const AddUser = (props) => {
@@ -32,19 +33,21 @@ const AddUser = (props) => {
   };
 
   return (
-    <Card className={styles.input}>
-      <form onSubmit={addSubmitHandler}>
-        <label forhtml="username">Username</label>
-        <input
-          onChange={usernameChangeHandler}
-          value={enteredUsername}
-          type="text"
-        />
-        <label forhtml="age">Age</label>
-        <input onChange={ageChangeHandler} value={enteredAge} type="number" />
-        <Button type="submit">Hello</Button>
-      </form>
-    </Card>
+    <Fragment>
+      <Card className={styles.input}>
+        <form onSubmit={addSubmitHandler}>
+          <label forhtml="username">Username</label>
+          <input
+            onChange={usernameChangeHandler}
+            value={enteredUsername}
+            type="text"
+          />
+          <label forhtml="age">Age</label>
+          <input onChange={ageChangeHandler} value={enteredAge} type="number" />
+          <Button type="submit">Hello</Button>
+        </form>
+      </Card>
+    </Fragment>
   );
 };
 

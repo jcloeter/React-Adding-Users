@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import AddUser from "./components/Users/AddUser";
 import UsersList from "./components/Users/UsersList";
 import ErrorModal from "./components/UI/ErrorModal";
@@ -32,7 +32,7 @@ function App() {
   };
 
   return (
-    <div>
+    <>
       <AddUser onAddUser={addUserHandler} onSubmitError={submitErrorHandler} />
       <UsersList users={usersList} />
       <ErrorModal
@@ -40,7 +40,7 @@ function App() {
         onExitModal={exitModalHandler}
         errorMessage={errorMessage}
       />
-    </div>
+    </>
   );
 }
 
