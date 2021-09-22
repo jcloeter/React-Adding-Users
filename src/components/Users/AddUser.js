@@ -17,9 +17,9 @@ const AddUser = (props) => {
   const addSubmitHandler = function (e) {
     e.preventDefault();
 
-    if (+enteredAge < 1) return;
+    if (+enteredAge < 1) return props.onSubmitError("Enter a valid age");
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0)
-      return;
+      return props.onSubmitError("Enter a valid name");
 
     props.onAddUser({
       name: enteredUsername,
